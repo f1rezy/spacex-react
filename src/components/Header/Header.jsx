@@ -28,9 +28,9 @@ export default function Header() {
                     menu={{
                         items,
                     }}
-                    trigger={['click']}
+                    trigger={['hover']}
                 >
-                    <a onClick={(e) => e.preventDefault()}>
+                    <a className={styles.link} onClick={(e) => e.preventDefault()}>
                     <Space>
                         Rockets
                         <DownOutlined />
