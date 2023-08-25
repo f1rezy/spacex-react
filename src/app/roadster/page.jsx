@@ -2,18 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import CompanyInfo from '@/components/CompanyInfo/CompanyInfo';
+import RoadsterInfo from '@/components/RoadsterInfo/RoadsterInfo';
 import Loading from '@/components/Loading/Loading';
 
-export default function Home() {
-  const [posts, setPosts] = useState();
+export default function Roadster() {
+    const [posts, setPosts] = useState();
 
     useEffect(() => {
         axios
-        .get("https://api.spacexdata.com/v4/company")
+        .get("https://api.spacexdata.com/v4/roadster")
         .then((response) => {
             setPosts(response.data);
-            console.log(response.data)
         })
         .catch((err) => {
             console.log(err);
@@ -24,7 +23,7 @@ export default function Home() {
         return <Loading />
     }
 
-  return (
-    <CompanyInfo data={posts}/>
-  )
+    return (
+      <RoadsterInfo data={posts}/>
+    )
 }
